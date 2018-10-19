@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Prestación: 
+      <span *ngIf="state==='UPDATE'">{{ prestacion.exam }} (ID: {{ prestacion.id }})</span>
+      <span *ngIf="state==='NEW'">Nuevo Ingreso</span>
+    </h1>
+
+    <form>
+      <div class="form-group">
+        <label for="name">Paciente</label>
+        <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="prestacion.patient">
+      </div>
+
+      <div class="form-group">
+        <label for="type">Tipo de Examen</label>
+        <input type="number" class="form-control" id="type" name="type" required [(ngModel)]="prestacion.type">
+      </div>
+
+      <div class="form-group">
+        <label for="exam">Examen</label>
+        <input type="text" class="form-control" id="exam" name="exam" required [(ngModel)]="prestacion.exam">
+      </div>
+
+      <div class="form-group">
+        <label for="maxDays">Máximo de días por informar: </label>
+        <input type="number" class="form-control" id="maxDays" name="maxDays" required [(ngModel)]="prestacion.maxDaysToBeforeInform">
+      </div>
+
+      <div class="form-group">
+        <label for="imageId">IMAGEN a evaluar</label>
+        <input type="text" class="form-control" id="imageId" name="imageId" required [(ngModel)]="prestacion.examImageId">
+      </div>
+  
+      <div class="form-group">
+        <label for="medicalRecord">Registro Médico</label>
+        <input type="text" class="form-control" id="medicalRecord" name="medicalRecord" required [(ngModel)]="prestacion.medicalRecord">
+      </div> 
+      <button type="submit" class="btn btn-primary" (click)="send(prestacion)" [disabled]="isCommunicating">
+        <span *ngIf="state ==='UPDATE'" >Actualizar</span>
+        <span *ngIf="state ==='NEW'">Crear</span>
+      </button> 
+      <button class="btn btn-second" routerLink="/dashboard"  [disabled]="isCommunicating">Cancelar</button>
+      <div *ngIf="isCommunicating"><span class="spinner spinner-xs spinner-inline"></span> Enviado datos, por favor espere...</div>
+    </form>
+
+<script src="/components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script>
+  // Initialize Boostrap-datepicker
+  $('.bootstrap-datepicker').datepicker({
+    autoclose: true,
+    todayBtn: "linked",
+    todayHighlight: true
+  });
+</script>
+</div>
+
+

@@ -1,0 +1,4 @@
+= CNAD DEMO: Simple CRUD
+
+
+Demostrate the usage of an angular+patternfly frontend supported by a nodejs backend that call some fuse services.

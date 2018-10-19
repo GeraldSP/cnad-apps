@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="header">
+  <nav class="navbar navbar-default navbar-pf" role="navigation">
+    <div class="navbar-header navbar-brand active">
+      <span class="" id="logo" title=""
+          routerlinkactive="active"
+          >ACME Informe Prestación</span>
+          
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-primary">
+        <li  routerLinkActive="active">
+            <a routerLink="/dashboard">Todos los Informes</a>
+        </li>
+        <li  routerLinkActive="active">
+            <a routerLink="/prestacion">Nueva Prestación</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="body">
+  <router-outlet></router-outlet>
+</div>
+<div class="footer navbar-fixed-bottom navbar navbar-default navbar-pf" >
+  <div class="navbar-brand active">DEMO CLINICA CNAD</div>
+</div>

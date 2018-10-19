@@ -1,0 +1,13 @@
+<div class="padding-15">
+  <div class="cards-pf pfng-isc-ex-container">
+    <div class="container-fluid pfng-restrictive-width-container" > 
+      <div class="col-lg-4 mb-3" *ngFor="let prestacion of prestaciones">
+        <a routerLink="/prestacion/{{prestacion.id}}">
+        <pfng-info-status-card
+        [config]="getConfigFor(prestacion)">
+        </pfng-info-status-card>
+      </a>
+      </div>
+    </div>
+  </div>
+</div>
