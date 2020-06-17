@@ -1,0 +1,19 @@
+{
+  "name": "cnad-simple-hello-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^2.14.1",
+    "fastify-cors": "^3.0.3",
+    "fastify-healthcheck": "^2.3.1",
+    "fastify-mariadb": "^1.2.1",
+    "fastify-static": "^2.7.0"
+  }
+}
