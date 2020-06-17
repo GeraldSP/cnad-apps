@@ -6,3 +6,5 @@ sql.cclh = {
   create: "insert into cclh values (?)",
   byName: "Select * from cclh where name like '% ? %'",
 };
+
+module.exports = sql;

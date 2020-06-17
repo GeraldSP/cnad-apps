@@ -11,7 +11,7 @@ let db = {
   connectionLimit: process.env.DB_CONNECTION_LIMIT || 16,
   promise: false,
 };
-
+// mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h 127.0.0.1 $MYSQL_DATABASE
 fastify.register(require("fastify-static"), {
   root: path.join(__dirname, "public"),
 });
