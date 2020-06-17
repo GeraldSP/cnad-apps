@@ -39,7 +39,7 @@ fastify.get("/grabar/:nombre", (req, reply) => {
   req.log.info("GRABA ");
 
   let queryParams = [];
-  queryParams.push(req.params.name);
+  queryParams.push(req.params.nombre);
 
   fastify.mariadb.query(sql.cclh.create, queryParams, (err, result) => {
     reply.send(err || result);
@@ -56,7 +56,7 @@ fastify.get("/obtener", (req, reply) => {
 fastify.get("/obtener/:nombre", (req, reply) => {
   req.log.info("Obtiene por nombre");
   let queryParams = [];
-  queryParams.push(req.params.name.trim());
+  queryParams.push(req.params.nombre);
   fastify.mariadb.query(sql.cclh.byName, queryParams, (err, result) => {
     reply.send(err || result);
   });
