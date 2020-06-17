@@ -41,17 +41,6 @@ fastify.get("/grabar/:nombre", (req, reply) => {
   });
 });
 
-fastify.get("/grabar/:nombre", (req, reply) => {
-  req.log.info("GRABA ");
-
-  let queryParams = [];
-  queryParams.push(req.params.name.trim());
-
-  fastify.mariadb.query(sql.cclh.create, queryParams, (err, result) => {
-    reply.send(err || result);
-  });
-});
-
 fastify.get("/obtener", (req, reply) => {
   req.log.info("Obtiene");
   fastify.mariadb.query(sql.cclh.all, [], (err, result) => {
