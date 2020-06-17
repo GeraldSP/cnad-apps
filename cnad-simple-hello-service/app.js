@@ -30,11 +30,16 @@ fastify.register(require("fastify-cors"), {
   methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
 });
 
+fastify.get("/ping", (req, reply) => {
+  req.log.info("ping ");
+  reply.send({ hostname: process.env.HOSTNAME });
+});
+
 fastify.get("/grabar/:nombre", (req, reply) => {
   req.log.info("GRABA ");
 
   let queryParams = [];
-  queryParams.push(req.params.name.trim());
+  queryParams.push(req.params.name);
 
   fastify.mariadb.query(sql.cclh.create, queryParams, (err, result) => {
     reply.send(err || result);
